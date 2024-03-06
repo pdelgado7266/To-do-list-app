@@ -9,8 +9,8 @@ function addTask() {
 
     var newTask = document.createElement('li');
     newTask.innerHTML = `
-        <span>${taskInput.value}</span>
-        <button onclick="completeTask(this)">Complete</button>
+		<input type="checkbox" onclick="completeTask(this)">
+		<span>${taskInput.value}</span>
         <button onclick="deleteTask(this)">Delete</button>
     `;
     
