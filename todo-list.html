@@ -4,20 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/todo-list.css">
-    <title>Simple To-Do List</title>
+    <title>Advanced To-Do List</title>
 </head>
 <body>
-    
-<!--This is a test-->
-    
     <div class="container">
-        <h1>To-Do List</h1>
-        <input type="text" id="taskInput" placeholder="Add a new task">
-        <button onclick="addTask()">Add</button>
-
-        <ul id="taskList">
-            <!-- Tasks will be added dynamically here -->
-        </ul>
+        <h1>Advanced To-Do List</h1>
+        <div id="app">
+            <div id="categories">
+                <label for="category">Category:</label>
+                <select id="category" onchange="filterTasksByCategory()">
+                    <option value="all">All</option>
+                    <option value="personal">Personal</option>
+                    <option value="work">Work</option>
+                    <option value="shopping">Shopping</option>
+                </select>
+            </div>
+            <input type="text" id="taskInput" placeholder="Add a new task">
+            <button onclick="addTask()">Add Task</button>
+            <ul id="taskList" ondrop="drop(event)" ondragover="allowDrop(event)"></ul>
+        </div>
     </div>
 
     <script src="../Javascript/todo-list.js"></script>
