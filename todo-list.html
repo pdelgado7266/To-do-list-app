@@ -11,8 +11,28 @@
 
     <div class="container">
         <h1>To-Do List</h1>
-        <input type="text" id="taskInput" placeholder="Add a new task">
-        <button onclick="addTask()">Add</button>
+        <input type="text" id="taskInput" placeholder="Add a new task"></br>
+         <button onclick="showAdvanced()" id="optionsButton">&#11206 Advanced Options</button>
+		 <div id="advanced">
+			 <label for="label">Label:</label>
+			 <input list="label" name="label"/>
+			 <datalist id="label">
+				<!-- Previously entered labels will be added dynamically here -->
+			 </datalist></br>
+			 
+			 <label for="priority">Priority:</label>
+			 <select id="priority" name="priority">
+				 <option value="low">&#128998 Low</option>
+				 <option value="normal">&#129001 Normal</option>
+				 <option value="high">&#129000 High</option>
+				 <option value="urgent">&#9888 Urgent</option>
+			 </select></br>
+			 
+			 <label for="dueDate">Due Date:</label>
+				<input type="date" id="dueDate" name="dueDate">
+		 
+		</div>
+		<button onclick="addTask()">Add</button>
 
         <ul id="taskList">
             <!-- Tasks will be added dynamically here -->

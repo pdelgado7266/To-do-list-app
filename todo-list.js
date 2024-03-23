@@ -1,3 +1,7 @@
+function showAdvanced() {
+	document.getElementById("advanced").style.display = "block";
+}
+
 function addTask() {
     var taskInput = document.getElementById('taskInput');
     var taskList = document.getElementById('taskList');
@@ -11,7 +15,8 @@ function addTask() {
     newTask.innerHTML = `
 		<input type="checkbox" onclick="completeTask(this)">
 		<span>${taskInput.value}</span>
-        <button onclick="deleteTask(this)">Delete</button>
+        <button>&#11109</button>
+		<button onclick="deleteTask(this)">Delete</button>
     `;
     
     taskList.appendChild(newTask);
