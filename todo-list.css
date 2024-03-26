@@ -39,6 +39,7 @@ button {
     cursor: pointer;
 }
 
+
 ul {
     list-style-type: none;
     padding: 0;
@@ -52,7 +53,7 @@ li {
     padding: 8px 0;
 }
 
-.completed {
+.completed span {
     text-decoration: line-through;
     color: #888;
 }
