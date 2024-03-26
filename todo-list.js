@@ -1,5 +1,15 @@
-function showAdvanced() {
-    document.getElementById("advanced").style.display = "block";
+function toggleAdvanced() {
+    var advancedSection = document.getElementById('advanced');
+    var advancedButton = document.getElementById('advancedButton');
+    if (advancedSection.style.display === 'none' || advancedSection.style.display === '')
+    {
+        advancedSection.style.display = 'block';
+        advancedButton.classList.add('active');
+    } else
+    {
+        advancedSection.style.display = 'none';
+        advancedButton.classList.remove('active');
+    }
 }
 
 function addTask() {
