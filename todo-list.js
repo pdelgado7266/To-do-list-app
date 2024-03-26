@@ -1,3 +1,7 @@
+function showAdvanced() {
+    document.getElementById("advanced").style.display = "block";
+}
+
 function addTask() {
     var taskInput = document.getElementById('taskInput');
     var taskList = document.getElementById('taskList');
@@ -9,11 +13,12 @@ function addTask() {
 
     var newTask = document.createElement('li');
     newTask.innerHTML = `
-        <span>${taskInput.value}</span>
-        <button onclick="completeTask(this)">Complete</button>
-        <button onclick="deleteTask(this)">Delete</button>
+		<input type="checkbox" onclick="completeTask(this)">
+		<span>${taskInput.value}</span>
+        <button>&#11109</button>
+		<button onclick="deleteTask(this)">Delete</button>
     `;
-    
+
     taskList.appendChild(newTask);
     taskInput.value = '';
 }
