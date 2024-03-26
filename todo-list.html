@@ -12,7 +12,10 @@
     <div class="container">
         <h1>To-Do List</h1>
         <input type="text" id="taskInput" placeholder="Add a new task"></br>
-        <button onclick="showAdvanced()" id="optionsButton">&#11206 Advanced Options</button>
+        <button id="advancedButton" onclick="toggleAdvanced()">
+            <span>Advanced Options</span>
+            <span class="arrow">&#11206;</span>
+        </button>
         <div id="advanced">
             <label for="label">Label:</label>
             <input list="label" name="label" />
