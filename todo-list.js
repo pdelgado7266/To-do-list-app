@@ -1,3 +1,17 @@
+function toggleAdvanced() {
+    var advancedSection = document.getElementById('advanced');
+    var advancedButton = document.getElementById('advancedButton');
+    if (advancedSection.style.display === 'none' || advancedSection.style.display === '')
+    {
+        advancedSection.style.display = 'block';
+        advancedButton.classList.add('active');
+    } else
+    {
+        advancedSection.style.display = 'none';
+        advancedButton.classList.remove('active');
+    }
+}
+
 function addTask() {
     var taskInput = document.getElementById('taskInput');
     var taskList = document.getElementById('taskList');
@@ -9,11 +23,12 @@ function addTask() {
 
     var newTask = document.createElement('li');
     newTask.innerHTML = `
-        <span>${taskInput.value}</span>
-        <button onclick="completeTask(this)">Complete</button>
-        <button onclick="deleteTask(this)">Delete</button>
+		<input type="checkbox" onclick="completeTask(this)">
+		<span>${taskInput.value}</span>
+        <button>&#11109</button>
+		<button onclick="deleteTask(this)">Delete</button>
     `;
-    
+
     taskList.appendChild(newTask);
     taskInput.value = '';
 }
