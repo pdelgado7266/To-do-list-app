@@ -26,7 +26,8 @@ function addTask() {
 		<input type="checkbox" onclick="completeTask(this)">
 		<span>${taskInput.value}</span>
         <button>&#11109</button>
-		<button onclick="deleteTask(this)">Delete</button>
+        <button onclick="editTask(this)">Edit</button>
+		<button onclick="deleteTask(this)"><i class="fa-solid fa-trash"></i></button>
     `;
 
     taskList.appendChild(newTask);
@@ -37,6 +38,16 @@ function completeTask(button) {
     var task = button.parentNode;
     task.classList.toggle('completed');
 }
+
+function editTask(button) {
+    var task = button.parentNode;
+    var span = task.querySelector('span');
+    var newText = prompt('Edit task:', span.textContent);
+    if (newText !== null && newText.trim() !== '') {
+        span.textContent = newText.trim();
+    }
+}
+
 
 function deleteTask(button) {
     var task = button.parentNode;
