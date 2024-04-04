@@ -34,7 +34,6 @@ function addTask() {
 	if (taskLabel.value.trim() != '') {
         checkLabel(taskLabel, listColor[i]);
 		taskList = document.getElementById(taskLabel.value);
-		i++;
 		if(i >= listColor.length) i=0;
     }
 	
@@ -42,7 +41,7 @@ function addTask() {
     var newTask = document.createElement('li');
     newTask.innerHTML = `
 		<input type="checkbox" onclick="completeTask(this)"> 
-		<span>${taskPriority.value} ${taskInput.value} </span> <span style="background: rgba(255, 255, 255, 0.5)">${taskDueDate.value}</span>
+		${taskPriority.value} <span> ${taskInput.value} </span> <span style="background: rgba(255, 255, 255, 0.75)">${taskDueDate.value}</span>
         <button>&#11109</button>
         <button onclick="editTask(this)">Edit</button>
 		<button onclick="deleteTask(this)"><i class="fa-solid fa-trash"></i></button>
@@ -99,7 +98,7 @@ function checkLabel(taskLabel, color) {
 		</ul>
 		</div>
 		`;
-		
+		i++;
 	}
 	
 }
