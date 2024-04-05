@@ -68,11 +68,21 @@ function editTask(button) {
     if (newText !== null && newText.trim() !== '') {
         span.textContent = newText.trim();
     }
+	
 }
 
 function deleteTask(button) {
     var task = button.parentNode;
+    var taskList = task.parentNode;
+
     task.parentNode.removeChild(task);
+
+    // Check if the task list container is empty
+    if (taskList.querySelectorAll('li').length === 0) {
+        // If the task list container is empty, remove it
+        var listContainer = taskList.parentNode;
+        listContainer.parentNode.removeChild(listContainer);
+    }
 }
 
 function checkLabel(taskLabel, color) {
