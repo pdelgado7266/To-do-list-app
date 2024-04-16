@@ -1,12 +1,15 @@
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: #f4f4f4;
     margin: 0;
     margin-top: 15px;
     display: flex;
+    flex-flow: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     height: 100vh;
+    background-image: url(../images/To-do-list-background.jpg);
+    background-size: cover;
 }
 
 .container {
@@ -17,6 +20,26 @@ body {
     width: 80%;
     max-width: 600px;
 }
+
+#listContainer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+
+.list {
+    margin: 10px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 20vw;
+    background-color: rgba(200, 200, 200, 0.5);
+}
+
+    .list .underline {
+        text-decoration: underline;
+    }
 
 #advanced {
     display: none;
@@ -39,10 +62,14 @@ body {
 
 #advancedButton.active .arrow {
     transform: translateY(-50%) rotate(180deg);
-
 }
 
 h1 {
+    text-align: center;
+    color: #333;
+}
+
+h3 {
     text-align: center;
     color: #333;
 }
