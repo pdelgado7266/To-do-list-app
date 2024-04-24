@@ -126,44 +126,36 @@ function checkLabel(taskLabel, color) {
 let draggedTask = null;
 let originList = null;
 
-function dragTask(event)
-{
+function dragTask(event){
 	event.stopPropagation();
 	const task = event.target.closest('li');
 	task.setAttribute('draggable', 'true');
 
-	task.addEventListener('dragstart', function (event)
-	{
+	task.addEventListener('dragstart', function (event){
 		draggedTask = event.target.closest('li');
 		originList = draggedTask.parentNode;
 	});
 
-	task.addEventListener('dragover', function (event)
-	{
+	task.addEventListener('dragover', function (event){
 		event.preventDefault();
 	});
 
-	task.addEventListener('drop', function (event)
-	{
-		if (event.target.closest('.list'))
-		{
+	task.addEventListener('drop', function (event){
+		if (event.target.closest('.list')){
 			event.preventDefault();
 			const targetList = event.target.closest('ul');
-			if (originList !== targetList)
-			{
+			if (originList !== targetList){
 				originList.removeChild(draggedTask);
 				targetList.appendChild(draggedTask);
-			} else
-			{
+			}
+			else{
 				const targetTask = event.target.closest('li');
-				if (targetTask)
-				{
+				if (targetTask){
 					const rect = targetTask.getBoundingClientRect();
-					if (event.clientY - rect.top > rect.height / 2)
-					{
+					if (event.clientY - rect.top > rect.height / 2){
 						targetList.insertBefore(draggedTask, targetTask.nextSibling);
-					} else
-					{
+					}
+					else{
 						targetList.insertBefore(draggedTask, targetTask);
 					}
 				}
