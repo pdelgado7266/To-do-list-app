@@ -62,10 +62,31 @@ function completeTask(button) {
 
 function editTask(button) {
 	var task = button.parentNode;
-	var span = task.querySelector('span');
-	var newText = prompt('Edit task:', span.textContent);
-	if (newText !== null && newText.trim() !== '') {
-		span.textContent = newText.trim();
+	var taskDetails = task.querySelectorAll('span, .due-date');
+	var inputFields = [];
+
+	taskDetails.forEach(detail => {
+		var inputField = document.createElement('input');
+		inputField.type = 'text';
+		inputField.value = detail.textContent;
+
+		detail.replaceWith(inputField);
+		inputFields.push(inputField);
+	});
+
+	button.textContent = "Save";
+	button.onclick = saveChanges;
+
+	function saveChanges() {
+		taskDetails.forEach((detail, index) => {
+			detail.textContent = inputFields[index].value;
+			inputFields[index].replaceWith(detail);
+		});
+
+		button.textContent = "Edit";
+		button.onclick = function () {
+			editTask(this);
+		};
 	}
 }
 
