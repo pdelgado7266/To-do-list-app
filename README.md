@@ -56,7 +56,9 @@ Select a due date from the calendar when adding a task.
 File Structure
 
 index.html: The main HTML file containing the to-do list interface.
+
 todo-list.css: The CSS file for styling the to-do list interface.
+
 todo-list.js: The JavaScript file for handling user interactions and updating the to-do list.
 
 Contributing
