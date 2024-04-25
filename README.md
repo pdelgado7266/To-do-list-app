@@ -34,16 +34,22 @@ Usage
 
 Adding a Task:
 Type your task in the input field at the top of the page and press Enter or click the "Add" button.
+
 Editing a Task:
 Click the "Edit" button next to the task you want to edit, make changes, and press Enter.
+
 Deleting a Task:
 Click the delete icon next to the task you want to delete.
+
 Marking a Task as Complete:
 Click the checkbox next to the task to mark it as complete.
+
 Organizing by Labels:
 Add labels to tasks by entering a label in the "Label" input field.
+
 Setting Priority:
 Select a priority level from the dropdown menu when adding a task.
+
 Setting Due Dates:
 Select a due date from the calendar when adding a task.
 
