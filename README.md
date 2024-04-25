@@ -5,11 +5,17 @@ This is a simple to-do list application built using HTML, CSS, and JavaScript. I
 Features
 
 Add Task: Users can add new tasks to the list.
+
 Edit Task: Users can edit existing tasks.
+
 Delete Task: Users can delete tasks they no longer need.
+
 Mark Task as Complete: Users can mark tasks as complete, which will visually indicate their completion status.
+
 Organize by Labels: Users can categorize tasks by labels, making it easier to manage tasks.
+
 Set Priority: Users can assign priority levels to tasks.
+
 Set Due Dates: Users can set due dates for tasks.
 
 Installation
