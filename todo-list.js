@@ -65,6 +65,13 @@ function addTask() {
 		        <button onclick="editTask(this)">Edit</button>
 		        <button onclick="deleteTask(this)"><i class="fa-solid fa-trash"></i></button>
 	    	`;
+		var options = newTask.querySelector('select').options;
+		for (var i = 0; i < options.length; i++) {
+			if (options[i].textContent.includes(taskPriority.value)) {
+				options[i].selected = true;
+				break;
+			}
+		}
 	}
 
 	taskList.appendChild(newTask);
