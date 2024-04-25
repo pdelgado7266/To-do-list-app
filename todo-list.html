@@ -16,13 +16,13 @@
     <div class="container">
         <h1>To-Do List</h1>
         <input type="text" id="taskInput" placeholder="Add a new task"></br>
-        <button id="advancedButton" onclick="toggleAdvanced()">
+        <button id="advancedButton" onclick="toggleAdvanced(event)">
             <span>Advanced Options</span>
             <span class="arrow">&#11206;</span>
         </button>
         <div id="advanced">
             <label for="label">Label:</label>
-            <input type="input" list="labelList" id="label" />
+            <input list="labelList" id="label" />
             <datalist id="labelList">
                 <!-- Previously entered labels will be added dynamically here -->
             </datalist></br>
@@ -30,7 +30,7 @@
             <label for="priority">Priority:</label>
             <select id="priority" name="priority">
                 <option value=""></option>
-				<option value="&#128998">&#128998 Low</option>
+                <option value="&#128998">&#128998 Low</option>
                 <option value="&#129001">&#129001 Normal</option>
                 <option value="&#129000">&#129000 High</option>
                 <option value="&#9888">&#9888 Urgent</option>
@@ -42,15 +42,16 @@
         </div>
         <button onclick="addTask()">Add</button>
     </div>
-	
-	<div id="listContainer">	
-		<div class="list">
-		<ul id='default'>
-            <!-- Tasks will be added dynamically here -->
-		</ul>
-		</div>
-		<!-- labeled lists will be added dynamically here -->
-	</div>
+
+    <div id="listContainer">
+        <div class="list">
+            <ul id='default'>
+                <h2 class="underline">General List</h2>
+                <!-- Tasks will be added dynamically here -->
+            </ul>
+        </div>
+        <!-- labeled lists will be added dynamically here -->
+    </div>
 
 </body>
 </html>
