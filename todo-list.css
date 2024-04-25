@@ -4,16 +4,16 @@ body {
     margin: 0;
     margin-top: 15px;
     display: flex;
-	flex-flow: column;
+    flex-flow: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url(../images/To-do-list-background.jpg);
+    background-image: url(To-do-list-background.jpg);
     background-size: cover;
 }
 
 .container {
-	background-color: #b7d9f5;
+    background-color: #b7d9f5;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -22,19 +22,24 @@ body {
 }
 
 #listContainer {
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: center;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
 }
 
 
 .list {
     margin: 10px;
-	padding: 20px;
+    padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-	width: 20vw;
+    width: 20vw;
+    background-color: rgba(200, 200, 200, 0.5);
 }
+
+    .list .underline {
+        text-decoration: underline;
+    }
 
 #advanced {
     display: none;
@@ -57,7 +62,6 @@ body {
 
 #advancedButton.active .arrow {
     transform: translateY(-50%) rotate(180deg);
-
 }
 
 h1 {
@@ -99,4 +103,8 @@ li {
 .completed span {
     text-decoration: line-through;
     color: #888;
+}
+
+.taskDueDate{
+	background: rgba(255, 255, 255, 0.75);
 }
