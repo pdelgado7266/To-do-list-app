@@ -38,13 +38,34 @@ function addTask() {
 
 
 	var newTask = document.createElement('li');
-	newTask.innerHTML = `
-		<input type="checkbox" onclick="completeTask(this)"> 
-		${taskPriority.value} <span> ${taskInput.value} </span> <span style="background: rgba(255, 255, 255, 0.75)">${taskDueDate.value}</span>
-        <button onclick="dragTask(event)">&#11109</button> <!-- Added onclick event -->
-        <button onclick="editTask(this)">Edit</button>
-		<button onclick="deleteTask(this)"><i class="fa-solid fa-trash"></i></button>
-    `;
+	// Check if the task has a priority
+	if (taskPriority.value.trim() === '') {
+		// If no priority is specified, will not have a priority
+		newTask.innerHTML = `
+        		<input type="checkbox" onclick="completeTask(this)"> 
+        		<span>${taskInput.value}</span> 
+        		<span style="background: rgba(255, 255, 255, 0.75)">${taskDueDate.value}</span>
+        		<button onclick="dragTask(event)">&#11109</button> <!-- Added onclick event -->
+        		<button onclick="editTask(this)">Edit</button>
+       			<button onclick="deleteTask(this)"><i class="fa-solid fa-trash"></i></button>
+    		`;
+	} else {
+		// If a priority is specified, use a dropdown menu to change it
+		newTask.innerHTML = `
+	        	<input type="checkbox" onclick="completeTask(this)"> 
+	        	<select onchange="changePriority(this)">
+		            <option value="&#128998">&#128998 Low</option>
+		            <option value="&#129001">&#129001 Normal</option>
+		            <option value="&#129000">&#129000 High</option>
+		            <option value="&#9888">&#9888 Urgent</option>
+		        </select>
+		        <span>${taskInput.value}</span> 
+		        <span style="background: rgba(255, 255, 255, 0.75)">${taskDueDate.value}</span>
+		        <button onclick="dragTask(event)">&#11109</button> <!-- Added onclick event -->
+		        <button onclick="editTask(this)">Edit</button>
+		        <button onclick="deleteTask(this)"><i class="fa-solid fa-trash"></i></button>
+	    	`;
+	}
 
 	taskList.appendChild(newTask);
 
