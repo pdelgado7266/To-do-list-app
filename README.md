@@ -16,7 +16,7 @@ Installation
 
 Clone the repository:
 
-git clone https://github.com/your-username/todo-list.git
+git clone https://github.com/pdelgado7266/todo-list.git
 
 Navigate to the project directory:
 
