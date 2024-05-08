@@ -113,16 +113,6 @@ function editTask(button) {
 }
 
 
-function editTask(button) {
-    var task = button.parentNode;
-    var span = task.querySelector('span');
-    var newText = prompt('Edit task:', span.textContent);
-    if (newText !== null && newText.trim() !== '') {
-        span.textContent = newText.trim();
-    }
-	
-}
-
 function deleteTask(button) {
     var task = button.parentNode;
     var taskList = task.parentNode;
