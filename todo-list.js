@@ -61,22 +61,31 @@ function addTask() {
 function editTask(button) {
 	var task = button.parentNode;
 	var taskDetails = task.querySelectorAll('.taskPriority, .taskName, .taskDueDate');
-	var inputFields = [];
+	var priorityDetail = task.querySelector('.taskPriority');
+	var nameDetail = task.querySelector('.taskName');
+	var dueDateDetail = task.querySelector('.taskDueDate');
+	var inputFields = [];	
 	
 	taskDetails.forEach(detail => {
-		//if( //find way to check if .taskPriority
+		if( detail == priorityDetail)
 		{
 			var inputField = document.createElement('select');
-			//add options
+			inputField.innerHTML += `
+				<option value=""></option>
+                <option value="&#128998">&#128998</option>
+                <option value="&#129001">&#129001</option>
+                <option value="&#129000">&#129000</option>
+                <option value="&#9888">&#9888</option>
+				 `;
 			inputField.value = detail.value;
 		}
-		//if( //find way to check if .taskName
+		if( detail == nameDetail)
 		{
 			var inputField = document.createElement('input');
 			inputField.type = 'text';
 			inputField.value = detail.textContent;
 		}
-		//if( //find way to check if .taskName
+		if( detail == dueDateDetail)
 		{
 			var inputField = document.createElement('input');
 			inputField.type = 'date';
